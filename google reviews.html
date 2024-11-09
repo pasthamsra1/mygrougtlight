@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Review Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-group button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        .rating {
+            display: flex;
+            justify-content: space-between;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
+        .rating input:checked ~ label {
+            color: #f8d747; /* Gold color when selected */
+        }
+        .rating input:hover ~ label {
+            color: #f8d747;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leave a Review</h1>
+        <form id="reviewForm">
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Rating Field -->
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">★</label>
+                </div>
+            </div>
+
+            <!-- Review Text -->
+            <div class="form-group">
+                <label for="reviewText">Your Review</label>
+                <textarea id="reviewText" name="reviewText" placeholder="Write your review here..." required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit Review</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Capture form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const rating = document.querySelector('input[name="rating"]:checked')?.value;
+            const reviewText = document.getElementById('reviewText').value;
+
+            // Validate that all required fields are filled out
+            if (!rating) {
+                alert('Please select a rating.');
+                return;
+            }
+
+            if (!name || !email || !reviewText) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Redirect to Google Reviews page (replace with your own Google review link)
+            const googleReviewUrl = 'https://www.google.com/search?q=your-business-name&ludocid=your-business-ludocid#lrd=0x1234567890abcdef:0xabcdef1234567890,3'; // Replace with your business's Google review link
+
+            // Optionally, show a message to the user
+            alert('Thank you for your review! You will now be redirected to leave your review on Google.');
+
+            // Redirect to Google Reviews page
+            window.location.href = googleReviewUrl;
+        });
+    </script>
+</body>
+</html>

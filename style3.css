@@ -1,0 +1,130 @@
+/* General styling for body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    background-size: cover;
+    background:linear-gradient(#ffdad5,#fff7f9);
+    background-size: cover;
+}
+
+ /* Heading Styling */
+ h1 {
+    font-size: 32px;
+    color: #a363aa; /* Dark blue color for the heading */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+ /* Form Styling */
+ form {
+    background:linear-gradient(#ffdad5,#fff7f9); /* White background for the form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+form:hover {
+    box-shadow: 0 6px 20px rgba(58, 58, 58, 0.15);
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  
+    font-weight: 600;
+}
+
+ /* Input and select field styling */
+ input[type="text"],
+ input[type="email"],
+ input[type="tel"],
+ select,
+ textarea {
+     width: 100%;
+     padding: 12px;
+     border: 2px solid #ddd;
+     border-radius: 10px;
+     box-sizing: border-box;
+     font-size: 14px;
+     background-color: #f9f9f9;
+     transition: border-color 0.3s;
+ }
+    /* Focus effect for inputs */
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #ff994f; /* Blue border on focus */
+        outline: none;
+    }
+    /* Textarea styling */
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+     /* File Input Styling */
+     input[type="file"] {
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+    }
+    input[type="file"]:hover {
+        background-color: #e9e9e9; /* Lighter background on hover */
+    }
+    /* Submit button styling */
+    button[type="submit"] {
+        display: flex;
+        align-items: center;
+        padding:15px 30px;
+        font-size: 16px;
+        color:#fff;
+        gap:10px;
+        border:none;
+        border-radius:50px;
+        background: linear-gradient(270deg,#ff994f,#fa6d86);
+        cursor:pointer;
+     
+    }
+     /* Button hover effect */
+     button[type="submit"]:hover {
+        background-color:  linear-gradient(270deg,#ff994f,#fa6d86);;
+    }
+     /* File List (image preview) */
+     .file-list {
+        margin-top: 10px;
+    }
+    .file-list img {
+        max-width: 100px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    /* Styling for the "Other Service" input field */
+    #otherServiceGroup {
+        margin-top: 10px;
+    }
+
+    /* Select input and text input font size adjustment */
+    .form-group select,
+    .form-group input[type="text"] {
+        font-size: 14px;
+    }
